@@ -1,4 +1,4 @@
-function Datos(nombre,apellido,clases){
+function Datos(){
 
 let nombre ="";
 let esNumero=true;
@@ -46,11 +46,12 @@ switch(clases){
     case "ambas":
         alert(`Hola ${nombre} ${apellido} el precio de ambas clases es $9500`);
         
-        default:
+        /*default:
             alert(`Error.`);
-            break}
+break */}
 }
-
+Datos()
+console.log(Date())
 
 /*let clases=prompt("ingrese que clases va a tomar(kick, funcional o ambas")
 if (clases=="kick"){
