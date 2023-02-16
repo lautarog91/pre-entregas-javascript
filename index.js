@@ -35,13 +35,13 @@ const tipoDeclases = [
     {id:1,nombre:"funcional", precio:4500 },
     {id:2,nombre:"kick-boxing",precio:5000},
     {id:3,nombre: "ambas",precio:9000},
-
 ]
+
 let clases=prompt("ingrese tipo de clases,funcional, kick-boxing, ambas");
 
 switch(clases){
     case "kick-boxing":
-        alert(`Hola ${nombre} ${apellido} el precio de la clase de kick-boxing es $5500 `);
+        alert(`Hola ${nombre} ${apellido} el precio de la clase de  es $5500 `);
         break
 
     case "funcional":
