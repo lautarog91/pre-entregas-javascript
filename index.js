@@ -34,26 +34,34 @@ while(isNaN (edad)){
 const tipoDeclases = [  
     {id:1,nombre:"funcional", precio:4500 },
     {id:2,nombre:"kick-boxing",precio:5000},
-    {id:3,nombre: "ambas",precio:9000},
+    {id:3,nombre: "ambas clases",precio:9000},
 ]
 
 let clases=prompt("ingrese tipo de clases,funcional, kick-boxing, ambas");
 
 switch(clases){
     case "kick-boxing":
-        alert(`Hola ${nombre} ${apellido} el precio de la clase de  es $5500 `);
+        let claseEncontrada= tipoDeclases.find(item=>item.nombre==="kick-boxing");
+        console.log(`el cliente ha escogido ${claseEncontrada.nombre}`);
+        alert(`Hola ${nombre} ${apellido} el precio de la clase de ${tipoDeclases[1].nombre}  es $ ${tipoDeclases[1].precio} `);
         break
 
     case "funcional":
-        alert(`Hola ${nombre} ${apellido} el precio de la clase de funcional es $5000`);
+        let claseEncontrada2= tipoDeclases.find(item=>item.nombre==="funcional");
+        console.log(`el cliente ha escogido ${claseEncontrada2.nombre}`);
+        alert(`Hola ${nombre} ${apellido} el precio de la clase de ${tipoDeclases[0].nombre} es $ ${tipoDeclases[0].precio}`);
         break
     
-    case "ambas":
-        alert(`Hola ${nombre} ${apellido} el precio de ambas clases es $9500`);
-        
-        /*default:
+    case "ambas clases":
+        let claseEncontrada3=tipoDeclases.find(item=>item.nombre==="ambas clases");
+        console.log(`el cliente ha escogido ${claseEncontrada3.nombre}`)
+        alert(`Hola ${nombre} ${apellido} el precio de ${tipoDeclases[2].nombre}  es $ ${tipoDeclases[2].precio}`);
+        break
+        default:
             alert(`Error.`);
-break */}
+            break }
+            
+            ;
 }
 Datos()
 console.log(Date())
