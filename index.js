@@ -37,7 +37,7 @@ const tipoDeclases = [
     {id:3,nombre: "ambas clases",precio:9000},
 ]
 
-let clases=prompt("ingrese tipo de clases,funcional, kick-boxing, ambas");
+let clases=prompt("ingrese tipo de clases,funcional, kick-boxing, ambas clases");
 
 switch(clases){
     case "kick-boxing":
@@ -57,25 +57,13 @@ switch(clases){
         console.log(`el cliente ha escogido ${claseEncontrada3.nombre}`)
         alert(`Hola ${nombre} ${apellido} el precio de ${tipoDeclases[2].nombre}  es $ ${tipoDeclases[2].precio}`);
         break
-        default:
-            alert(`Error.`);
-            break }
+        
+    default:
+        alert(`Error.`);
+        break }
             
             ;
 }
 Datos()
 console.log(Date())
 
-/*let clases=prompt("ingrese que clases va a tomar(kick, funcional o ambas")
-if (clases=="kick"){
-    alert( `hola ${nombre} ${apellido} las clases de kick salen 5500 pesos.`)
-}
-else if(clases=="funcional"){
-    alert(`hola ${nombre} ${apellido} las clases de funcional salen 5000 pesos.`)
-}
-else if(clases=="ambas"){
-    alert(`hola ${nombre} ${apellido} ambos tipos de clases salen 9000 pesos.`)
-}
-else{
-    alert(`${nombre} ${apellido} no ingresaste correctamente el tipo de clases`)
-}*/
