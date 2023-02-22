@@ -1,5 +1,5 @@
 function Datos(){
-
+/*solicitar nombre */ 
 let nombre ="";
 let esNumero=true;
 
@@ -12,7 +12,7 @@ while(esNumero){
         alert("El nombre no puede contener números")
         break;  }
     }}
-
+/*solicitar apellido*/ 
 let apellido="";
 let esNumero2=true;
 
@@ -25,44 +25,53 @@ while(esNumero2){
         alert("El apellido no puede contener números")
         break;  }
     }} 
-    
+    /*solicitar edad */
 let edad=parseInt(prompt("ingrese su edad."));
 while(isNaN (edad)){
     alert("ingrese edad correcta");
     edad=parseInt(prompt("ingrese su edad"))
 }
+/*Objeto clases*/ 
 const tipoDeclases = [  
     {id:1,nombre:"funcional", precio:4500 },
     {id:2,nombre:"kick-boxing",precio:5000},
     {id:3,nombre: "ambas clases",precio:9000},
 ]
-
+/*solicitar clase*/ 
 let clases=prompt("ingrese tipo de clases,funcional, kick-boxing, ambas clases");
-
+/*mensajes de alerta */
 switch(clases){
     case "kick-boxing":
-        let claseEncontrada= tipoDeclases.find(item=>item.nombre==="kick-boxing");
-        console.log(`el cliente ha escogido ${claseEncontrada.nombre}`);
+
         alert(`Hola ${nombre} ${apellido} el precio de la clase de ${tipoDeclases[1].nombre}  es $ ${tipoDeclases[1].precio} `);
         break
 
     case "funcional":
-        let claseEncontrada2= tipoDeclases.find(item=>item.nombre==="funcional");
-        console.log(`el cliente ha escogido ${claseEncontrada2.nombre}`);
+
         alert(`Hola ${nombre} ${apellido} el precio de la clase de ${tipoDeclases[0].nombre} es $ ${tipoDeclases[0].precio}`);
         break
     
     case "ambas clases":
-        let claseEncontrada3=tipoDeclases.find(item=>item.nombre==="ambas clases");
-        console.log(`el cliente ha escogido ${claseEncontrada3.nombre}`)
+
         alert(`Hola ${nombre} ${apellido} el precio de ${tipoDeclases[2].nombre}  es $ ${tipoDeclases[2].precio}`);
         break
         
     default:
         alert(`Error.`);
         break }
-            
             ;
+/*constructor de personas */             
+class Persona{
+constructor(nombre,apellido,clases){
+    this.nombre=nombre;
+    this.apellido=apellido;
+    this.clases=clases;
+}
+}
+
+const personaUno = new Persona(nombre, apellido,clases);
+/*mensaje por consola*/ 
+console.log(personaUno);           
 }
 Datos()
 console.log(Date())
