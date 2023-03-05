@@ -83,7 +83,7 @@ console.log(Date())*/
 
 
 
-let usuarios=[]
+let usuarios=[];
 
 let formulario = document.getElementById("formulario");
 formulario.addEventListener ("submit",(e)=>{
@@ -99,18 +99,22 @@ formulario.addEventListener ("submit",(e)=>{
         apellido,
         edad,
         clase,
-    }
+    };
+    
     let div=document.createElement("div");
-    div.innerHTML=JSON.stringify(persona);
+    div.innerHTML =`<h2>Bienvenido<h2/>`;
     document.body.append(div);
 
     let usuarioStorage=localStorage.getItem("usuarios");
     if(usuarioStorage){
         usuarios=JSON.parse(usuarioStorage)
+
+
     }
     else{usuarios=[];}
 
     usuarios.push(persona);
 
     localStorage.setItem("usuarios",JSON.stringify(usuarios));
+
 })
