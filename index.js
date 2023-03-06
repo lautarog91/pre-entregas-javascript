@@ -82,8 +82,8 @@ Datos()
 console.log(Date())*/
 
 
-
-let usuarios=[];
+let primerFiltro=[]
+let usuarios=JSON.parse(localStorage.getItem("usuarios"))|| [];
 
 let formulario = document.getElementById("formulario");
 formulario.addEventListener ("submit",(e)=>{
@@ -95,26 +95,29 @@ formulario.addEventListener ("submit",(e)=>{
     let clase=inputs[3].value;
 
     let persona={
-        nombre,
-        apellido,
-        edad,
-        clase,
-    };
+            nombre,
+            apellido,
+            edad,
+            clase,}
+
+            primerFiltro.push(persona)
+
+            const resultado=primerFiltro.find(persona=>persona.clase==="funcional"||"kick-boxing"||"ambas")
+            usuarios.push(resultado)
     
     let div=document.createElement("div");
     div.innerHTML =`<h2>Bienvenido<h2/>`;
-    document.body.append(div);
 
-    let usuarioStorage=localStorage.getItem("usuarios");
-    if(usuarioStorage){
-        usuarios=JSON.parse(usuarioStorage)
+    let divContent=document.createElement("div");
+    divContent.innerHTML=`
+    <p>${persona.nombre}</p>
+    <p>${persona.apellido}</p>
+    <p>${persona.edad}</p>
+    <p>${persona.clase}</p>
+    `
+    div.appendChild(divContent)
+    document.body.append(div)
 
-
-    }
-    else{usuarios=[];}
-
-    usuarios.push(persona);
-
-    localStorage.setItem("usuarios",JSON.stringify(usuarios));
-
+    usuarios.push(persona)
+    localStorage.setItem("usuarios",JSON.stringify(usuarios))
 })
