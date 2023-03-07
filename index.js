@@ -103,8 +103,9 @@ formulario.addEventListener ("submit",(e)=>{
             primerFiltro.push(persona)
 
             const resultado=primerFiltro.find(persona=>persona.clase==="funcional"||"kick-boxing"||"ambas")
-            usuarios.push(resultado)
-    
+            
+            if(resultado){
+    usuarios.push(resultado)
     let div=document.createElement("div");
     div.innerHTML =`<h2>Bienvenido<h2/>`;
 
@@ -116,8 +117,12 @@ formulario.addEventListener ("submit",(e)=>{
     <p>${persona.clase}</p>
     `
     div.appendChild(divContent)
-    document.body.append(div)
+    document.body.append(div)}
+    else{
+        let div=document.createElement("div");
+    div.innerHTML =`<h2>No has ingresado correctamente el tipo de clase.<h2/>`;
+    }
 
-    usuarios.push(persona)
+    
     localStorage.setItem("usuarios",JSON.stringify(usuarios))
 })
