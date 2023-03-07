@@ -95,14 +95,17 @@ formulario.addEventListener ("submit",(e)=>{
     let clase=inputs[3].value;
 
     let persona={
-            nombre,
-            apellido,
-            edad,
-            clase,}
+            nombre:nombre,
+            apellido:apellido,
+            edad:edad,
+            clase:clase,}
 
             primerFiltro.push(persona)
 
-            const resultado=primerFiltro.find(persona=>persona.clase==="funcional"||"kick-boxing"||"ambas")
+            const resultado=primerFiltro.find(persona=>persona.clase==="funcional")
+            const resultado2=primerFiltro.find(persona=>persona.clase==="kick-boxing")
+            const resultado3=primerFiltro.find(persona=>persona.clase==="ambas")
+            
             
             if(resultado){
     usuarios.push(resultado)
@@ -118,7 +121,39 @@ formulario.addEventListener ("submit",(e)=>{
     `
     div.appendChild(divContent)
     document.body.append(div)}
-    else{
+    
+    if (resultado2){
+        usuarios.push(resultado2)
+        let div=document.createElement("div");
+        div.innerHTML =`<h2>Bienvenido<h2/>`;
+    
+        let divContent=document.createElement("div");
+        divContent.innerHTML=`
+        <p>${persona.nombre}</p>
+        <p>${persona.apellido}</p>
+        <p>${persona.edad}</p>
+        <p>${persona.clase}</p>
+        `
+        div.appendChild(divContent)
+        document.body.append(div)}
+
+
+        if (resultado3){
+            usuarios.push(resultado3)
+            let div=document.createElement("div");
+            div.innerHTML =`<h2>Bienvenido<h2/>`;
+        
+            let divContent=document.createElement("div");
+            divContent.innerHTML=`
+            <p>${persona.nombre}</p>
+            <p>${persona.apellido}</p>
+            <p>${persona.edad}</p>
+            <p>${persona.clase}</p>
+            `
+            div.appendChild(divContent)
+            document.body.append(div)}
+
+        else{
         let div=document.createElement("div");
     div.innerHTML =`<h2>No has ingresado correctamente el tipo de clase.<h2/>`;
     }
