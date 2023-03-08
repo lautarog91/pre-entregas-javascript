@@ -81,7 +81,7 @@ console.log(personaUno);
 Datos()
 console.log(Date())*/
 
-
+/*
 let primerFiltro=[]
 let usuarios=JSON.parse(localStorage.getItem("usuarios"))|| [];
 
@@ -122,7 +122,7 @@ formulario.addEventListener ("submit",(e)=>{
     div.appendChild(divContent)
     document.body.append(div)}
     
-    if (resultado2){
+    if  (resultado2){
         usuarios.push(resultado2)
         let div=document.createElement("div");
         div.innerHTML =`<h2>Bienvenido<h2/>`;
@@ -154,10 +154,63 @@ formulario.addEventListener ("submit",(e)=>{
             document.body.append(div)}
 
         else{
-        let div=document.createElement("div");
-    div.innerHTML =`<h2>No has ingresado correctamente el tipo de clase.<h2/>`;
+        let article=document.createElement("article");
+    article.innerHTML =`<h2>No has ingresado correctamente el tipo de clase.<h2/>`;
+    document.body.append(article)
     }
 
     
     localStorage.setItem("usuarios",JSON.stringify(usuarios))
 })
+*/
+let usuarios=JSON.parse(localStorage.getItem("usuarios"))|| [];
+
+let formulario = document.getElementById("formulario");
+formulario.addEventListener ("submit",(e)=>{
+    e.preventDefault();
+    let inputs = e.target.children;
+    let nombre= inputs [0].value;
+    let apellido =inputs[1].value;
+    let edad =inputs[2].value;
+    let clase=inputs[3].value;})
+
+    if( clase==="funcional"||clase==="kick-boxing"||clase==="ambas"){
+        
+            let persona={
+                nombre:nombre,
+                apellido:apellido,
+                edad:edad,
+                clase:clase,}
+
+            usuarios.push(persona)}
+
+        /* let div=document.createElement("div");
+            div.innerHTML =`<h2>Bienvenido<h2/>`;
+        
+            let divContent=document.createElement("div");
+            divContent.innerHTML=`
+            <p>${persona.nombre}</p>
+            <p>${persona.apellido}</p>
+            <p>${persona.edad}</p>
+            <p>${persona.clase}</p>
+            `
+            div.appendChild(divContent)
+            document.body.append(div)*/
+            else{
+                let div=document.createElement("div");
+                div.innerHTML =`<h2>NO HAS INGRESADO CORRECTAMENTE EL NOMBRE DE CLASE.<h2/>`;
+                document.body.append(div)
+
+            }
+
+            localStorage.setItem("usuarios",JSON.stringify(usuarios))
+
+
+
+
+
+
+
+
+
+    
