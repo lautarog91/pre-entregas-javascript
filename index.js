@@ -12,23 +12,26 @@ formulario.addEventListener ("submit",(e)=>{
 /*Declaro condicional */
     if( clase==="funcional"||clase==="kick-boxing"||clase==="ambas"){
         /*Si se cumple se crea el objeto, se pushea a usuarios y se crea div en HTML */ 
-            let persona={
-                nombre:nombre,
-                apellido:apellido,
-                edad:edad,
-                clase:clase,}
+            class persona{constructor (nombre,apellido,edad,clase){
+                this.nombre=nombre;
+                this.apellido=apellido;
+                this.edad=edad;
+                this.clase=clase;}
+            }
+            const persona1=new persona(nombre,apellido,edad,clase)
+            usuarios.push(persona1)
 
-            usuarios.push(persona)
+
 
             let div=document.createElement("div");
             div.innerHTML =`<h2>Bienvenido<h2/>`;
         
             let divContent=document.createElement("div");
             divContent.innerHTML=`
-            <p>${persona.nombre}</p>
-            <p>${persona.apellido}</p>
-            <p>${persona.edad}</p>
-            <p>${persona.clase}</p>
+            <p>${persona1.nombre}</p>
+            <p>${persona1.apellido}</p>
+            <p>${persona1.edad}</p>
+            <p>${persona1.clase}</p>
             `
             div.appendChild(divContent)
             document.body.append(div)
@@ -53,5 +56,7 @@ formulario.addEventListener ("submit",(e)=>{
 
 
 
+/*
+    const carrito=[]
 
-    
+    carrito.lenght===0 && console.log("el carrito esta vacio")*/
