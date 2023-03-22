@@ -45,15 +45,21 @@ Swal.fire({
     showConfirmButton: false,
     timer: 2500
 })
-
+fetch('https://jsonplaceholder.typicode.com/posts')
+    .then((response)=>response.json())
+    .then((json)=>console.log(json))
         }
 
         /*En caso de no cumplirse se crea este div en HTML*/ 
             else{
-                let div=document.createElement("div");
-                div.innerHTML =`<h2>NO HAS INGRESADO CORRECTAMENTE EL NOMBRE DE CLASE.<h2/>`;
-                document.body.append(div)
-
+                
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'error',
+                    title: 'error al cargar datos',
+                    showConfirmButton: false,
+                    timer: 2500
+                })
             }
 
 
