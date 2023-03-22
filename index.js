@@ -10,7 +10,7 @@ formulario.addEventListener ("submit",(e)=>{
     let edad =inputs[2].value;
     let clase=inputs[3].value;
 /*Declaro condicional */
-    if( clase==="funcional"||clase==="kick-boxing"||clase==="ambas"){
+    if( clase==="funcional"||clase==="kick-boxing"||clase==="musculacion"){
         /*Si se cumple se crea el objeto, se pushea a usuarios y se crea div en HTML */ 
             class persona{constructor (nombre,apellido,edad,clase){
                 this.nombre=nombre;
