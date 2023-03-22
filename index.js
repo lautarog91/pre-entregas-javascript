@@ -37,6 +37,15 @@ formulario.addEventListener ("submit",(e)=>{
             document.body.append(div)
             /*Creo usuarios en localstorage que me tome lo de usuarios en js */ 
         localStorage.setItem("usuarios",JSON.stringify(usuarios))
+
+Swal.fire({
+    position: 'top-end',
+    icon: 'success',
+    title: 'Tus datos han sido cargados',
+    showConfirmButton: false,
+    timer: 2500
+})
+
         }
 
         /*En caso de no cumplirse se crea este div en HTML*/ 
