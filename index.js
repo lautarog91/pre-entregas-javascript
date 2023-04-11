@@ -30,8 +30,8 @@ formulario.addEventListener ("submit",(e)=>{
             divContent.innerHTML=`
             <p>${persona1.nombre}</p>
             <p>${persona1.apellido}</p>
-            <p>${persona1.edad}</p>
-            <p>${persona1.clase}</p>
+            <p> Años: ${persona1.edad}</p>
+            <p> A tu clase de ${persona1.clase}</p>
             `
             div.appendChild(divContent)
             document.body.append(div)
@@ -45,9 +45,18 @@ Swal.fire({
     showConfirmButton: false,
     timer: 2500
 })
-fetch('https://jsonplaceholder.typicode.com/posts')
+
+fetch('https://jsonplaceholder.typicode.com/posts/1')
     .then((response)=>response.json())
-    .then((json)=>console.log(json))
+    .then((json)=>localStorage.setItem("Api",JSON.stringify(json)));
+
+
+    let usuariosApi=localStorage.getItem("Api")
+
+    let div2=document.createElement("div");
+    div2.innerHTML =usuariosApi;
+    document.body.append(div2)
+
         }
 
         /*En caso de no cumplirse se crea este div en HTML*/ 
