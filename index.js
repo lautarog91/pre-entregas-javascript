@@ -38,6 +38,8 @@ formulario.addEventListener ("submit",(e)=>{
             /*Creo usuarios en localstorage que me tome lo de usuarios en js */ 
         localStorage.setItem("usuarios",JSON.stringify(usuarios))
 
+
+
 Swal.fire({
     position: 'top-end',
     icon: 'success',
@@ -53,11 +55,21 @@ fetch('https://jsonplaceholder.typicode.com/posts/1')
 
     let usuariosApi=localStorage.getItem("Api")
 
-    let div2=document.createElement("div");
-    div2.innerHTML =usuariosApi;
+    let div2=document.createElement("div")
+    div2.innerHTML =usuariosApi
     document.body.append(div2)
 
-        }
+    let usuariosInscriptos=localStorage.getItem ("usuarios")
+    
+    let div3=document.createElement("div")
+            div3.innerHTML=`<h2>Usuarios ya inscriptos</h2>;${ usuariosInscriptos}`
+            document.body.append(div3);
+
+    
+
+
+
+}
 
         /*En caso de no cumplirse se crea este div en HTML*/ 
             else{
